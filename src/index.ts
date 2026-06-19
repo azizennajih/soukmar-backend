@@ -5,6 +5,7 @@ import authRoutes from './routes/auth';
 import listingRoutes from './routes/listings';
 import messageRoutes from './routes/messages';
 import favoriteRoutes from './routes/favorites';
+import uploadRoutes from './routes/upload';
 
 const app = express();
 const PORT = process.env['PORT'] || 3000;
@@ -16,6 +17,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/listings', listingRoutes);
 app.use('/api/messages', messageRoutes);
 app.use('/api/favorites', favoriteRoutes);
+app.use('/api/upload', uploadRoutes);
 
 app.get('/api/health', (_req, res) => res.json({ status: 'ok' }));
 
